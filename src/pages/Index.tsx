@@ -4,17 +4,20 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const Index = () => {
   return (
-    <div className="bg-white">
-      <Header />
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="bg-background">
+        <Header />
+        <Hero />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 
