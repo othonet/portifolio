@@ -35,16 +35,12 @@ const Header = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <div className="flex items-center gap-2">
-              {isHovered ? (
-                <div className="flex items-center animate-pulse">
-                  <Rocket className="w-8 h-8 text-primary" />
-                  <Flame className="w-6 h-6 text-primary absolute -right-4 -bottom-1" />
-                </div>
-              ) : (
-                <Rocket className="w-8 h-8 text-foreground transition-transform hover:scale-110" />
-              )}
-            </div>
+            <Rocket className="w-8 h-8 text-foreground transition-transform hover:scale-110" />
+            {isHovered && (
+              <Flame 
+                className="w-6 h-6 text-primary absolute -right-4 -bottom-1 animate-pulse" 
+              />
+            )}
           </div>
           
           <div className="flex items-center gap-4">
