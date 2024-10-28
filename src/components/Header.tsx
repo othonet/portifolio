@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Rocket, Flame } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -29,7 +30,22 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold gradient-text">Portfólio</h1>
+          <div 
+            className="relative cursor-pointer group"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="flex items-center gap-2">
+              {isHovered ? (
+                <div className="flex items-center animate-pulse">
+                  <Rocket className="w-8 h-8 text-primary" />
+                  <Flame className="w-6 h-6 text-primary absolute -right-4 -bottom-1" />
+                </div>
+              ) : (
+                <Rocket className="w-8 h-8 text-foreground transition-transform hover:scale-110" />
+              )}
+            </div>
+          </div>
           
           <div className="flex items-center gap-4">
             {/* Desktop Navigation */}
