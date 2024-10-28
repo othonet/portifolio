@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,31 +22,46 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-background/80 backdrop-blur-md shadow-sm' 
+        : 'bg-transparent'
+    }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold gradient-text">Portfólio</h1>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8">
-            {['Início', 'Projetos', 'Habilidades', 'Contato'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollTo(item.toLowerCase())}
-                className="text-gray-600 hover:text-primary transition-colors"
-              >
-                {item}
-              </button>
-            ))}
-          </nav>
+          <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex gap-8">
+              {['Início', 'Projetos', 'Habilidades', 'Contato'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollTo(item.toLowerCase())}
+                  className="text-foreground/60 hover:text-primary transition-colors"
+                >
+                  {item}
+                </button>
+              ))}
+            </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-accent transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -54,7 +71,7 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollTo(item.toLowerCase())}
-                className="block w-full text-left py-2 text-gray-600 hover:text-primary transition-colors"
+                className="block w-full text-left py-2 text-foreground/60 hover:text-primary transition-colors"
               >
                 {item}
               </button>
