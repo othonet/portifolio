@@ -2,12 +2,12 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-card text-card-foreground py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <h2 className="text-2xl font-bold mb-2">Portfólio</h2>
-            <p className="text-gray-400">
+            <p className="text-muted-foreground">
               Desenvolvedor Web Full Stack
             </p>
           </div>
@@ -36,7 +36,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.</p>
         </div>
       </div>
