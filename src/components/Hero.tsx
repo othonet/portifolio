@@ -15,32 +15,32 @@ const Hero = () => {
           <div className="flex gap-4">
             <a
               href="#contato"
-              className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+              className="gradient-border relative overflow-hidden px-6 py-3 rounded-lg group transition-all duration-300 hover:-translate-y-1 bg-background/50 backdrop-blur-sm"
             >
-              Entre em contato
+              <span className="relative z-10 text-foreground font-medium">Entre em contato</span>
             </a>
             <div className="flex gap-4">
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full hover:bg-accent transition-colors text-foreground"
+                className="gradient-border p-3 rounded-full hover:bg-accent transition-all duration-300 hover:-translate-y-1 bg-background/50 backdrop-blur-sm"
               >
-                <Github size={24} />
+                <Github size={24} className="text-foreground" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full hover:bg-accent transition-colors text-foreground"
+                className="gradient-border p-3 rounded-full hover:bg-accent transition-all duration-300 hover:-translate-y-1 bg-background/50 backdrop-blur-sm"
               >
-                <Linkedin size={24} />
+                <Linkedin size={24} className="text-foreground" />
               </a>
               <a
                 href="mailto:seu@email.com"
-                className="p-3 rounded-full hover:bg-accent transition-colors text-foreground"
+                className="gradient-border p-3 rounded-full hover:bg-accent transition-all duration-300 hover:-translate-y-1 bg-background/50 backdrop-blur-sm"
               >
-                <Mail size={24} />
+                <Mail size={24} className="text-foreground" />
               </a>
             </div>
           </div>
