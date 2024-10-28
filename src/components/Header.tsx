@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Rocket, Flame } from 'lucide-react';
+import { Menu, X, Sun, Moon, Rocket } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 
 const Header = () => {
@@ -31,16 +31,15 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div 
-            className="relative cursor-pointer group"
+            className="relative cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <Rocket className="w-8 h-8 text-foreground transition-transform hover:scale-110" />
-            {isHovered && (
-              <Flame 
-                className="w-6 h-6 text-primary absolute -right-4 -bottom-1 animate-pulse" 
-              />
-            )}
+            <Rocket 
+              className={`w-8 h-8 text-foreground transition-all duration-300 ${
+                isHovered ? 'transform -translate-y-1 translate-x-1 rotate-12' : ''
+              }`} 
+            />
           </div>
           
           <div className="flex items-center gap-4">
