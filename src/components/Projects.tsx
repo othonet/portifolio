@@ -29,16 +29,16 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projetos" className="section-padding bg-gray-50">
+    <section id="projetos" className="section-padding bg-background">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
           Meus <span className="gradient-text">Projetos</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow animate-fade-in"
+              className="bg-card text-card-foreground rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <img
@@ -47,13 +47,13 @@ const Projects = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                      className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -64,7 +64,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Github size={20} />
                     Código
@@ -73,7 +73,7 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   >
                     <ExternalLink size={20} />
                     Demo
