@@ -65,5 +65,39 @@ body {
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary animate-gradient-x;
+}
+
+.gradient-border {
+  @apply relative rounded-xl overflow-hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary animate-gradient-x -z-10;
+  padding: 2px;
+  border-radius: inherit;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+  background-size: 200% 200%;
 }

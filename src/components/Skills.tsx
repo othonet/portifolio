@@ -25,7 +25,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="habilidades" className="section-padding">
+    <section id="habilidades" className="section-padding gradient-bg">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
           Minhas <span className="gradient-text">Habilidades</span>
@@ -34,11 +34,11 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="p-6 bg-card rounded-xl shadow-lg hover:shadow-xl transition-shadow animate-fade-in"
+              className="gradient-border p-6 bg-card/50 backdrop-blur-sm rounded-xl hover:shadow-xl transition-all duration-300 animate-fade-in hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                <div className="p-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg text-primary">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
@@ -47,7 +47,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm"
+                    className="bg-gradient-to-r from-primary/10 to-secondary/10 text-foreground px-3 py-1 rounded-full text-sm hover:from-primary/20 hover:to-secondary/20 transition-colors"
                   >
                     {skill}
                   </span>

@@ -29,7 +29,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projetos" className="section-padding bg-background">
+    <section id="projetos" className="section-padding">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
           Meus <span className="gradient-text">Projetos</span>
@@ -38,13 +38,13 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-card text-card-foreground rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow animate-fade-in"
+              className="gradient-border bg-card/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
@@ -53,7 +53,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm"
+                      className="bg-gradient-to-r from-primary/10 to-secondary/10 text-foreground px-3 py-1 rounded-full text-sm hover:from-primary/20 hover:to-secondary/20 transition-colors"
                     >
                       {tech}
                     </span>
