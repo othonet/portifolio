@@ -1,12 +1,14 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import StarryBackground from './StarryBackground';
 
 const Hero = () => {
   return (
-    <section id="início" className="min-h-screen flex items-center section-padding">
-      <div className="container mx-auto">
+    <section id="início" className="relative min-h-screen flex items-center section-padding overflow-hidden">
+      <StarryBackground /> {/* Efeito de fundo */}
+      <div className="container mx-auto relative z-10">
         <div className="max-w-3xl animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Olá, eu sou um{' '}
+            Othon Felipe, seu{' '}
             <span className="gradient-text">Desenvolvedor Web</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
@@ -21,7 +23,7 @@ const Hero = () => {
             </a>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/othonet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full hover:bg-accent transition-colors text-foreground"
@@ -29,7 +31,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ofbsantos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full hover:bg-accent transition-colors text-foreground"
@@ -37,7 +39,7 @@ const Hero = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:seu@email.com"
+                href="mailto:ofbsantos@gmail.com"
                 className="p-3 rounded-full hover:bg-accent transition-colors text-foreground"
               >
                 <Mail size={24} />

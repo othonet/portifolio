@@ -2,28 +2,28 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: "Projeto 1",
-    description: "Uma aplicação web moderna construída com React e TypeScript",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    tech: ["React", "TypeScript", "Tailwind"],
-    github: "https://github.com",
-    live: "https://exemplo.com"
+    title: "Plantal",
+    description: "Site institucional.",
+    image: "https://i.ibb.co/z2VV1ZZ/914-F0-B1-B-2-AAD-48-DF-9-B65-2-F4-C840-B523-D.png",
+    tech: ["HTML5", "CSS3", "Bootstrap CSS", "Javascript", "PHP", "MySQL"],
+    github: "",
+    live: "https://plantal.com.br/"
   },
   {
-    title: "Projeto 2",
-    description: "Sistema de gerenciamento com dashboard interativo",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    tech: ["Next.js", "Node.js", "MongoDB"],
-    github: "https://github.com",
-    live: "https://exemplo.com"
+    title: "SRAD - RJ",
+    description: "Portal institucional.",
+    image: "https://i.ibb.co/Nnqr8M7/EDD3-AC4-B-1177-4-F5-F-AD55-C92-F3-D8-F5-E7-B.png",
+    tech: ["HTML5", "CSS3", "Bootstrap CSS", "Javascript", "PHP", "MySQL"],
+    github: "",
+    live: "https://srad-rj.org.br/"
   },
   {
-    title: "Projeto 3",
-    description: "E-commerce com integração de pagamentos",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    tech: ["React", "Stripe", "Firebase"],
-    github: "https://github.com",
-    live: "https://exemplo.com"
+    title: "Bios",
+    description: "Site institucional.",
+    image: "https://i.ibb.co/SBqXNHg/D7882455-66-F7-4-BE4-94-D6-E257-C96837-F1.png",
+    tech: ["HTML5", "CSS3", "Bootstrap CSS", "Javascript", "PHP", "MySQL", "Laravel"],
+    github: "",
+    live: "https://www.site.biosaprova.com.br/"
   }
 ];
 
@@ -32,7 +32,7 @@ const Projects = () => {
     <section id="projetos" className="section-padding">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
-          Meus <span className="gradient-text">Projetos</span>
+          Projetos <span className="gradient-text">Mais Recentes</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -60,24 +60,28 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github size={20} />
-                    Código
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                    Demo
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Github size={20} />
+                      Código
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

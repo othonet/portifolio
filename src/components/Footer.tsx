@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageCircleMoreIcon } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -7,8 +7,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <h2 className="text-2xl font-bold mb-2">Othon Felipe</h2>
-            <p className="text-muted-foreground">
-              Desenvolvedor Web Full Stack
+            <p className="text-muted-foreground text-center md:text-left">
+              Sou apaixonado por tecnologia e desenvolvimento web, e busco construir soluções que fazem a diferença.
+              <br/>
+              Me chame em um dos meus canais de contato, e vamos ter uma conversa mais próxima. 😁
             </p>
           </div>
           <div className="flex gap-6">
@@ -21,7 +23,7 @@ const Footer = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com/ofbsantos"
+              href="https://linkedin.com/in/ofbsantos"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
@@ -33,6 +35,14 @@ const Footer = () => {
               className="hover:text-primary transition-colors"
             >
               <Mail size={24} />
+            </a>
+            <a
+              href="https://wa.me/+5574988099693" // Substitua pelo seu número de telefone no formato internacional
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              <MessageCircleMoreIcon size={24} />
             </a>
           </div>
         </div>
